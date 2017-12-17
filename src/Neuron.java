@@ -8,5 +8,5 @@ public class Neuron {
     private InputFunction inputFunction;
     private ActivationFunction activationFunction;
 
-    
+
 }

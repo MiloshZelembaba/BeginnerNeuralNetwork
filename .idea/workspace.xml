@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="418ad5e7-5880-4ac2-bf3e-70f43076ffe2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ActivationFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Edge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/InputFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Neuron.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SimpleInputFunction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ThresholdFunction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ActivationFunctionStrings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NNInput.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NeuralNetConstructor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NeuralNetwork.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NeuronInputFunctionStrings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SimpleNNInput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Neuron.java" afterPath="$PROJECT_DIR$/src/Neuron.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,12 +25,57 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Neuron.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Neuron.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Neuron.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NeuralNetConstructor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NeuralNetConstructor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="508">
+              <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NeuronInputFunctionStrings.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/NeuronInputFunctionStrings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivationFunctionStrings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ActivationFunctionStrings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NeuralNetwork.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding>
+                <element signature="e#297#298#0" expanded="true" />
+                <element signature="e#326#327#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,6 +157,12 @@
         <option value="$PROJECT_DIR$/src/ActivationFunction.java" />
         <option value="$PROJECT_DIR$/src/ThresholdFunction.java" />
         <option value="$PROJECT_DIR$/src/Neuron.java" />
+        <option value="$PROJECT_DIR$/src/NNInput.java" />
+        <option value="$PROJECT_DIR$/src/SimpleNNInput.java" />
+        <option value="$PROJECT_DIR$/src/NeuralNetwork.java" />
+        <option value="$PROJECT_DIR$/src/ActivationFunctionStrings.java" />
+        <option value="$PROJECT_DIR$/src/NeuronInputFunctionStrings.java" />
+        <option value="$PROJECT_DIR$/src/NeuralNetConstructor.java" />
       </list>
     </option>
   </component>
@@ -474,10 +527,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NNInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Neuron.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SimpleNNInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NeuralNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ActivationFunctionStrings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NeuralNetConstructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NeuronInputFunctionStrings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding />
         </state>
       </provider>
