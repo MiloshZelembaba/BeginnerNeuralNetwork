@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by miloshzelembaba on 2017-12-17.
  */
@@ -6,22 +8,55 @@ public class NeuralNetwork {
     private ActivationFunction activationFunction;
     private InputFunction inputFunction;
     private NNInput input;
+    private ArrayList<Integer> nodesPerLayer;
+
+    private ArrayList<Neuron> inputLayer;
 
 
     public void init(){
+        inputLayer = new ArrayList<>();
+        /* create the input layer and store them for reference */
+        for (int i=0; i<input.getInputSize(); i++){
+            inputLayer.add(new Neuron());
+        }
+
+        ArrayList<Neuron> currentLayer = inputLayer;
+        for (int layerSize: nodesPerLayer){
+            ArrayList<Neuron> newLayer = new ArrayList<>();
+
+            for (int i=0; i<layerSize; i++){
+                newLayer.add(new Neuron(activationFunction,inputFunction));
+            }
+
+            for (Neuron from: currentLayer){
+                for (Neuron to: newLayer){
+                    double weight = 1; // TODO: set the weights somehow
+                    Edge e = new Edge(from,to,weight);
+                    from.addEdge(e);
+                }
+            }
+
+            currentLayer = newLayer;
+        }
 
     }
 
-    public void setNumLayers(int n){
-        numLayers = n;
+    public void setLayerSizes(ArrayList<Integer> l){
+        nodesPerLayer = l;
+        numLayers = l.size();
     }
 
     public void setActivationFunction(int s){
+        if (s == ActivationFunctionStrings.THRESHHOLD){
+            activationFunction = new ThresholdFunction();
+        }
 
     }
 
     public void setNeuronInputFunction(int s){
-
+        if (s == NeuronInputFunctionStrings.SIMPLE){
+            inputFunction = new SimpleInputFunction();
+        }
     }
 
     public void setInput(NNInput n){

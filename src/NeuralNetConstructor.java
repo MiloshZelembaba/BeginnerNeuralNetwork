@@ -4,11 +4,11 @@ import java.util.ArrayList;
  * Created by miloshzelembaba on 2017-12-17.
  */
 public class NeuralNetConstructor {
-    private int numLayers = 2;
     private NeuralNetwork nn;
     private NNInput input; // to specify the format of the input
     private int activationFunction = 0; // activation function for each neuron (they all get the same one)
     private int neuronInputFunction = 0; // the neuron's input function (they all get the same one)
+    private ArrayList<Integer> layerSizes;
     /**
      * Better have constructed everything properly orr it's throwing your ass an error
      * @return a NeuralNetwork object
@@ -22,19 +22,19 @@ public class NeuralNetConstructor {
         nn.setActivationFunction(this.activationFunction);
         nn.setNeuronInputFunction(this.neuronInputFunction);
         nn.setInput(this.input);
-        nn.setNumLayers(this.numLayers);
+        nn.setLayerSizes(layerSizes);
         nn.init();
 
         return nn;
     }
 
-    public NeuralNetConstructor setInput(NNInput in){
-        this.input = in;
+    public NeuralNetConstructor setLayerSizes(ArrayList<Integer> list){
+        this.layerSizes = list;
         return this;
     }
 
-    public NeuralNetConstructor setNumLayers(int n){
-        this.numLayers = n;
+    public NeuralNetConstructor setInput(NNInput in){
+        this.input = in;
         return this;
     }
 
