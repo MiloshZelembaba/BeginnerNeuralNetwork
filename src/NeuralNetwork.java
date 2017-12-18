@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * Created by miloshzelembaba on 2017-12-17.
@@ -40,6 +42,22 @@ public class NeuralNetwork {
         }
 
     }
+
+
+    public void train(NNInput input, NNOutput output){
+        //TODO: get the training function implemented
+    }
+
+    public NNOutput process(NNInput input){
+        Queue<Neuron> neurons = new PriorityQueue<>();
+        ArrayList<Double> inputValues = input.getValues();
+        for (int i=0; i<inputLayer.size(); i++){
+            inputLayer.get(i).setValue(inputValues.get(i));
+        }
+
+        /* essentially just doing a BFS sort of iterating through the layers */ 
+    }
+
 
     public void setLayerSizes(ArrayList<Integer> l){
         nodesPerLayer = l;

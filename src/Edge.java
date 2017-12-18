@@ -11,4 +11,12 @@ public class Edge {
         to = t;
         weight = w;
     }
+
+    public Neuron getToNeuron(){
+        return to;
+    }
+
+    public Double getWeight(){
+        return weight;
+    }
 }
