@@ -5,4 +5,5 @@ describe how the thing works
 
 
 Functions I'm trying to learn:
-	XOR: in progress
+	AND: In progress
+	XOR: not started

@@ -12,6 +12,10 @@ public class Edge {
         weight = w;
     }
 
+    public void updateWeight(double learningRate, double delta, double val){
+        weight += learningRate * delta * val;
+    }
+
     public Neuron getToNeuron(){
         return to;
     }

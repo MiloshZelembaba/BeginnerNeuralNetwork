@@ -4,3 +4,4 @@ TODO:
 - more acivation functions
 - train() method
 - constants for neurons
+- clear the inputs of neurons from previous runs (properly)

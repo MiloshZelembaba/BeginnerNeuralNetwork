@@ -6,4 +6,12 @@ public class ThresholdFunction extends ActivationFunction {
     public double process(double input){
         return Math.max(0,input);
     }
+
+    public double derivativeProcess(double input){
+        if (input <= 0){
+            return 0;
+        }
+
+        return 1;
+    }
 }

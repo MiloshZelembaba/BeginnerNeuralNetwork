@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
 /**
  * Created by miloshzelembaba on 2017-12-17.
@@ -21,7 +18,7 @@ public class NeuralNetwork {
         inputLayer = new ArrayList<>();
         /* create the input layer and store them for reference */
         for (int i=0; i<inputSpec.getInputSize(); i++){
-            inputLayer.add(new Neuron(activationFunction,inputFunction));
+            inputLayer.add(new Neuron(activationFunction,inputFunction, true));
         }
         layers = new ArrayList<>();
         layers.add(inputLayer);
@@ -36,7 +33,7 @@ public class NeuralNetwork {
 
             for (Neuron from: currentLayer){
                 for (Neuron to: newLayer){
-                    double weight = 0.5; // TODO: set the weights somehow
+                    double weight = 1; // TODO: set the weights somehow
                     Edge e = new Edge(from,to,weight);
                     from.addEdge(e);
                 }
@@ -49,23 +46,53 @@ public class NeuralNetwork {
     }
 
 
-    public void train(NNInput input, NNOutput output){
-        //TODO: get the training function implemented
+    public void train(NNInput input, ArrayList<Double> expectedOutput){
+        ArrayList<Double> actualOutput = process(input).getOutput();
+
+        /* output layer calculation is different than the rest */
+        ArrayList<Neuron> outputLayer = layers.get(layers.size()-1);
+        for (int i=0; i<outputLayer.size(); i++){
+            Neuron n = outputLayer.get(i);
+            n.calculateDeltaOutputNode(calculateError(expectedOutput.get(i), actualOutput.get(i)));
+        }
+
+        /* all the hidden layers */
+        for (int i=layers.size()-2; i>0; i--){
+            for (Neuron n: layers.get(i)){
+                n.calculateDeltaHiddenNode();
+                n.updateWeights();
+            }
+        }
+
+        /* the input layer weight updates */
+        for (Neuron n: layers.get(0)){
+            n.updateWeights();
+        }
     }
 
-    public ArrayList<Neuron> process(NNInput input){
+    private double calculateError(double y, double h){
+        return y - h;
+    }
+
+    public NNOutput process(NNInput input){
         ArrayList<Double> inputValues = input.getValues();
         for (int i=0; i<inputLayer.size(); i++){
             inputLayer.get(i).setValue(inputValues.get(i));
         }
 
         for (ArrayList<Neuron> layer: layers){
+            /* need a better way of doing this, whats goin on is that
+            it's erasing all of the input from any previous runs on an input
+             */
+            Neuron tmp = layer.get(0);
+            tmp.clearConnectingNeurons();
+
             for (Neuron n: layer){
                 n.fire();
             }
         }
 
-        return layers.get(layers.size()-1);
+        return new SimpleNNOutput(layers.get(layers.size()-1));
 
     }
 
