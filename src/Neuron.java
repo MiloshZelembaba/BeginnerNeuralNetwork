@@ -17,6 +17,10 @@ public class Neuron {
 
     public Neuron(){}
 
+    public double getValue(){
+        return value;
+    }
+
     public void addResult(double d){
         valuesFromNeurons.add(d);
     }

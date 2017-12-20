@@ -7,10 +7,10 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args){
         NeuralNetConstructor neuralNetConstructor = new NeuralNetConstructor();
-        NeuralNetwork nn;
+        NeuralNetwork nn = null;
         try {
-            nn = neuralNetConstructor.setActivationFunction(ActivationFunctionStrings.ReLU)
-                    .setLayerSizes(new ArrayList<>(Arrays.asList(2, 2, 1)))
+            nn = neuralNetConstructor.setActivationFunction(ActivationFunctionStrings.THRESHHOLD)
+                    .setLayerSizes(new ArrayList<>(Arrays.asList(2, 2, 2 )))
                     .setNeuronInputFunction(NeuronInputFunctionStrings.SIMPLE)
                     .setInputSpec(new NNInputSpec(3))
                     .construct();
@@ -18,6 +18,11 @@ public class Main {
             System.out.println(e);
         }
 
+        NNInput input = new SimpleNNInput(new ArrayList<>(Arrays.asList(1.0,1.0,1.0)));
 
+        ArrayList<Neuron> output = nn.process(input);
+        for (Neuron n: output){
+            System.out.println(n.getValue());
+        }
     }
 }

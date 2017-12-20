@@ -14,14 +14,17 @@ public class NeuralNetwork {
     private ArrayList<Integer> nodesPerLayer;
 
     private ArrayList<Neuron> inputLayer;
+    private ArrayList<ArrayList<Neuron>> layers; // unnecessary but it makes things easy for now, i'll see where it takes me
 
 
     public void init(){
         inputLayer = new ArrayList<>();
         /* create the input layer and store them for reference */
         for (int i=0; i<inputSpec.getInputSize(); i++){
-            inputLayer.add(new Neuron());
+            inputLayer.add(new Neuron(activationFunction,inputFunction));
         }
+        layers = new ArrayList<>();
+        layers.add(inputLayer);
 
         ArrayList<Neuron> currentLayer = inputLayer;
         for (int layerSize: nodesPerLayer){
@@ -33,13 +36,14 @@ public class NeuralNetwork {
 
             for (Neuron from: currentLayer){
                 for (Neuron to: newLayer){
-                    double weight = 1; // TODO: set the weights somehow
+                    double weight = 0.5; // TODO: set the weights somehow
                     Edge e = new Edge(from,to,weight);
                     from.addEdge(e);
                 }
             }
 
             currentLayer = newLayer;
+            layers.add(currentLayer);
         }
 
     }
@@ -49,16 +53,20 @@ public class NeuralNetwork {
         //TODO: get the training function implemented
     }
 
-    public void process(NNInput input){
-        Queue<Neuron> neurons = new LinkedList<>();
+    public ArrayList<Neuron> process(NNInput input){
         ArrayList<Double> inputValues = input.getValues();
         for (int i=0; i<inputLayer.size(); i++){
             inputLayer.get(i).setValue(inputValues.get(i));
         }
 
+        for (ArrayList<Neuron> layer: layers){
+            for (Neuron n: layer){
+                n.fire();
+            }
+        }
 
+        return layers.get(layers.size()-1);
 
-        /* essentially just doing a BFS sort of iterating through the layers */
     }
 
 
