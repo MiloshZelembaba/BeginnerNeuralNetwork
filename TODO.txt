@@ -1,0 +1,6 @@
+TODO:
+
+- NNoutput
+- more acivation functions
+- train() method
+- constants for neurons
