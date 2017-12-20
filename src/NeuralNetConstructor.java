@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class NeuralNetConstructor {
     private NeuralNetwork nn;
-    private NNInput input; // to specify the format of the input
+    private NNInputSpec input; // to specify the format of the input
     private int activationFunction = 0; // activation function for each neuron (they all get the same one)
     private int neuronInputFunction = 0; // the neuron's input function (they all get the same one)
     private ArrayList<Integer> layerSizes;
@@ -33,7 +33,7 @@ public class NeuralNetConstructor {
         return this;
     }
 
-    public NeuralNetConstructor setInput(NNInput in){
+    public NeuralNetConstructor setInputSpec(NNInputSpec in){
         this.input = in;
         return this;
     }

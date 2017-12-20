@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -9,7 +10,7 @@ public class NeuralNetwork {
     private int numLayers;
     private ActivationFunction activationFunction;
     private InputFunction inputFunction;
-    private NNInput input;
+    private NNInputSpec inputSpec;
     private ArrayList<Integer> nodesPerLayer;
 
     private ArrayList<Neuron> inputLayer;
@@ -18,7 +19,7 @@ public class NeuralNetwork {
     public void init(){
         inputLayer = new ArrayList<>();
         /* create the input layer and store them for reference */
-        for (int i=0; i<input.getInputSize(); i++){
+        for (int i=0; i<inputSpec.getInputSize(); i++){
             inputLayer.add(new Neuron());
         }
 
@@ -48,14 +49,16 @@ public class NeuralNetwork {
         //TODO: get the training function implemented
     }
 
-    public NNOutput process(NNInput input){
-        Queue<Neuron> neurons = new PriorityQueue<>();
+    public void process(NNInput input){
+        Queue<Neuron> neurons = new LinkedList<>();
         ArrayList<Double> inputValues = input.getValues();
         for (int i=0; i<inputLayer.size(); i++){
             inputLayer.get(i).setValue(inputValues.get(i));
         }
 
-        /* essentially just doing a BFS sort of iterating through the layers */ 
+
+
+        /* essentially just doing a BFS sort of iterating through the layers */
     }
 
 
@@ -77,7 +80,7 @@ public class NeuralNetwork {
         }
     }
 
-    public void setInput(NNInput n){
-        input = n;
+    public void setInput(NNInputSpec n){
+        inputSpec = n;
     }
 }
