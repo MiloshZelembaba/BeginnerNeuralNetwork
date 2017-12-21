@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Created by miloshzelembaba on 2017-12-17.
  */
 public class NeuralNetConstructor {
-    private NeuralNetwork nn;
+    private NeuralNetwork nn = new NeuralNetwork();
     private NNInputSpec input; // to specify the format of the input
     private int activationFunction = 0; // activation function for each neuron (they all get the same one)
     private int neuronInputFunction = 0; // the neuron's input function (they all get the same one)
@@ -18,9 +18,6 @@ public class NeuralNetConstructor {
             throw new Exception("Did not properly construct Neural Network");
         }
 
-        nn = new NeuralNetwork();
-        nn.setActivationFunction(this.activationFunction);
-        nn.setNeuronInputFunction(this.neuronInputFunction);
         nn.setInput(this.input);
         nn.setLayerSizes(layerSizes);
         nn.init();
@@ -44,6 +41,14 @@ public class NeuralNetConstructor {
         }
 
         this.activationFunction = s;
+        nn.setActivationFunction(this.activationFunction);
+
+        return this;
+    }
+
+    public NeuralNetConstructor setActivationFunction(ActivationFunction a) throws Exception{
+        nn.setActivationFunction(a);
+        activationFunction = -1; // just a place holder so it doens't cause an error in construct()
         return this;
     }
 
@@ -52,6 +57,13 @@ public class NeuralNetConstructor {
             throw new Exception("Invalid neuron input function type");
         }
         this.neuronInputFunction = s;
+        nn.setNeuronInputFunction(this.neuronInputFunction);
+        return this;
+    }
+
+    public NeuralNetConstructor setNeuronInputFunction(InputFunction i) throws Exception{
+        nn.setNeuronInputFunction(i);
+        neuronInputFunction = -1; // just a place holder so it doens't cause an error in construct()
         return this;
     }
 

@@ -2,16 +2,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by miloshzelembaba on 2017-12-19.
+ * Created by miloshzelembaba on 2017-12-20.
  */
-public class Main {
-    public static void main(String[] args) {
+public class AND_NN {
+    public static void main(String[] args){
         NeuralNetConstructor neuralNetConstructor = new NeuralNetConstructor();
+
+        ActivationFunction thresh = new ThreshHold(2);
+        InputFunction inp = new SumInputFunction();
         NeuralNetwork nn = null;
         try {
-            nn = neuralNetConstructor.setActivationFunction(ActivationFunctionStrings.ReLU)
-                    .setLayerSizes(new ArrayList<>(Arrays.asList(3,1)))
-                    .setNeuronInputFunction(NeuronInputFunctionStrings.SIMPLE)
+            nn = neuralNetConstructor.setActivationFunction(thresh)
+                    .setLayerSizes(new ArrayList<>(Arrays.asList(1)))
+                    .setNeuronInputFunction(inp)
                     .setInputSpec(new NNInputSpec(2))
                     .construct();
         } catch (Exception e) {
@@ -27,25 +30,6 @@ public class Main {
         NNInput in4 = new SimpleNNInput(new ArrayList<>(Arrays.asList(0.0, 0.0)));
         ArrayList<Double> out4 = new ArrayList<>(Arrays.asList(0.0));
 
-
-        nn.train(in1,out1);
-        nn.train(in2, out2);
-        nn.train(in3, out3);
-        nn.train(in4, out4);
-        nn.train(in1,out1);
-        nn.train(in2, out2);
-        nn.train(in3, out3);
-        nn.train(in4, out4);
-        nn.train(in1,out1);
-        nn.train(in2, out2);
-        nn.train(in3, out3);
-        nn.train(in4, out4);
-        nn.train(in1,out1);
-        nn.train(in2, out2);
-        nn.train(in3, out3);
-        nn.train(in4, out4);
-
-        nn.printLayerSpec();
 
         ArrayList<Double> output = nn.process(in1).getOutput();
         System.out.print("1,1 = ");
@@ -71,4 +55,7 @@ public class Main {
             System.out.println(d);
         }
     }
+
+
+
 }

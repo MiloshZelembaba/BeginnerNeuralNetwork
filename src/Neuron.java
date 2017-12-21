@@ -50,7 +50,6 @@ public class Neuron {
 
         delta *= sum;
 
-        System.out.println(delta);
     }
 
     public void updateWeights(){

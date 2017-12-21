@@ -45,7 +45,6 @@ public class NeuralNetwork {
 
     }
 
-
     public void train(NNInput input, ArrayList<Double> expectedOutput){
         ArrayList<Double> actualOutput = process(input).getOutput();
 
@@ -103,10 +102,14 @@ public class NeuralNetwork {
     }
 
     public void setActivationFunction(int s){
-        if (s == ActivationFunctionStrings.THRESHHOLD){
-            activationFunction = new ThresholdFunction();
+        if (s == ActivationFunctionStrings.ReLU){
+            activationFunction = new ReLU();
         }
 
+    }
+
+    public void setActivationFunction(ActivationFunction a){
+        activationFunction = a;
     }
 
     public void setNeuronInputFunction(int s){
@@ -115,7 +118,18 @@ public class NeuralNetwork {
         }
     }
 
+    public void setNeuronInputFunction(InputFunction i){
+        inputFunction = i;
+    }
+
     public void setInput(NNInputSpec n){
         inputSpec = n;
+    }
+
+    public void printLayerSpec(){
+        for (int n: nodesPerLayer){
+            System.out.print(n + " ");
+        }
+        System.out.println();
     }
 }
