@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="418ad5e7-5880-4ac2-bf3e-70f43076ffe2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BiasNNInput.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BiasNNInputSpec.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Sigmoid.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SimpleNNInputSpec.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/XOR_NN.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BeginnerNeuralNetwork.iml" afterPath="$PROJECT_DIR$/BeginnerNeuralNetwork.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AND_NN.java" afterPath="$PROJECT_DIR$/src/AND_NN.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ActivationFunction.java" afterPath="$PROJECT_DIR$/src/ActivationFunction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ActivationFunctionStrings.java" afterPath="$PROJECT_DIR$/src/ActivationFunctionStrings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NNInput.java" afterPath="$PROJECT_DIR$/src/NNInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NNInputSpec.java" afterPath="$PROJECT_DIR$/src/NNInputSpec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NNOutput.java" afterPath="$PROJECT_DIR$/src/NNOutput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NeuralNetwork.java" afterPath="$PROJECT_DIR$/src/NeuralNetwork.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NeuronInputFunctionStrings.java" afterPath="$PROJECT_DIR$/src/NeuronInputFunctionStrings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ReLU.java" afterPath="$PROJECT_DIR$/src/ReLU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SimpleInputFunction.java" afterPath="$PROJECT_DIR$/src/SimpleInputFunction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SimpleNNInput.java" afterPath="$PROJECT_DIR$/src/SimpleNNInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SumInputFunction.java" afterPath="$PROJECT_DIR$/src/SumInputFunction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThreshHold.java" afterPath="$PROJECT_DIR$/src/ThreshHold.java" />
-    </list>
+    <list default="true" id="418ad5e7-5880-4ac2-bf3e-70f43076ffe2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
