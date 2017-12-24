@@ -3,7 +3,7 @@
  */
 public abstract class ActivationFunction {
 
-    abstract double process(double input);
+    public abstract double process(double input);
 
-    abstract double derivativeProcess(double input);
+    public abstract double derivativeProcess(double input);
 }

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 /**
  * Created by miloshzelembaba on 2017-12-19.
  */
@@ -12,7 +13,7 @@ public class Main {
             nn = neuralNetConstructor.setActivationFunction(ActivationFunctionStrings.ReLU)
                     .setLayerSizes(new ArrayList<>(Arrays.asList(3,1)))
                     .setNeuronInputFunction(NeuronInputFunctionStrings.SIMPLE)
-                    .setInputSpec(new NNInputSpec(2))
+                    .setInputSpec(new SimpleNNInputSpec(2))
                     .construct();
         } catch (Exception e) {
             System.out.println(e);

@@ -33,7 +33,8 @@ public class NeuralNetwork {
 
             for (Neuron from: currentLayer){
                 for (Neuron to: newLayer){
-                    double weight = 1; // TODO: set the weights somehow
+                    // generate between -0.1 and 0.1
+                    double weight = Math.random() * 2 - 1; // TODO: set the weights somehow
                     Edge e = new Edge(from,to,weight);
                     from.addEdge(e);
                 }

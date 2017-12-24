@@ -1,7 +1,7 @@
 /**
  * Created by miloshzelembaba on 2017-12-20.
  */
-public class ThreshHold extends ActivationFunction{
+public class ThreshHold extends ActivationFunction {
     double threshhold = 1;
 
     public ThreshHold(double v){

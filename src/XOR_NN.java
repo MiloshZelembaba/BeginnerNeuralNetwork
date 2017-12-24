@@ -2,34 +2,32 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by miloshzelembaba on 2017-12-20.
- */
-public class AND_NN {
+    * Created by miloshzelembaba on 2017-12-22.
+*/
+public class XOR_NN {
     public static void main(String[] args){
         NeuralNetConstructor neuralNetConstructor = new NeuralNetConstructor();
 
-        ActivationFunction thresh = new ThreshHold(2);
-        InputFunction inp = new SumInputFunction();
+
         NeuralNetwork nn = null;
         try {
             nn = neuralNetConstructor.setActivationFunction(new Sigmoid())
-                    .setLayerSizes(new ArrayList<>(Arrays.asList(1)))
-                    .setNeuronInputFunction(inp)
-                    .setInputSpec(new SimpleNNInputSpec(2))
+                    .setLayerSizes(new ArrayList<>(Arrays.asList(2,2,1)))
+                    .setNeuronInputFunction(new SimpleInputFunction())
+                    .setInputSpec(new SimpleNNInputSpec(3))
                     .construct();
         } catch (Exception e) {
             System.out.println(e);
         }
 
-        NNInput in1 = new SimpleNNInput(new ArrayList<>(Arrays.asList(1.0,1.0)));
+        NNInput in1 = new SimpleNNInput(new ArrayList<>(Arrays.asList(1.0,1.0,1.0)));
         ArrayList<Double> out1 = new ArrayList<>(Arrays.asList(1.0));
-        NNInput in2 = new SimpleNNInput(new ArrayList<>(Arrays.asList(1.0, 0.0)));
+        NNInput in2 = new SimpleNNInput(new ArrayList<>(Arrays.asList(1.0, 0.0,1.0)));
         ArrayList<Double> out2 = new ArrayList<>(Arrays.asList(0.0));
-        NNInput in3 = new SimpleNNInput(new ArrayList<>(Arrays.asList(0.0, 1.0)));
+        NNInput in3 = new SimpleNNInput(new ArrayList<>(Arrays.asList(0.0, 1.0,1.0)));
         ArrayList<Double> out3 = new ArrayList<>(Arrays.asList(0.0));
-        NNInput in4 = new SimpleNNInput(new ArrayList<>(Arrays.asList(0.0, 0.0)));
-        ArrayList<Double> out4 = new ArrayList<>(Arrays.asList(0.0));
-
+        NNInput in4 = new SimpleNNInput(new ArrayList<>(Arrays.asList(0.0, 0.0,1.0)));
+        ArrayList<Double> out4 = new ArrayList<>(Arrays.asList(1.0));
 
         for (int i=0; i<100; i++){
             nn.train(in1,out1);
@@ -67,3 +65,4 @@ public class AND_NN {
 
 
 }
+
